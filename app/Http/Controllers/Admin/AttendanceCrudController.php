@@ -37,21 +37,14 @@ class AttendanceCrudController extends CrudController
                 'type' => 'number',
                 'label' =>'abc'
             ],
-            
-                // [
-                //     'name'  => 'employees.employee_id',
-                //     'label' => 'Employee Name',
-                //     'type'  => 'text',
-                // ],
             [
                 //Select2Multiple = n-n relationship (with pivot table)
                 'label'     => "Employees Names",
-                'type'      => 'select2',
+                'type'      => 'select',
                 'name'      => 'employees', // the method that defines the relationship in your Model
                 'entity'    => 'employees', // the method that defines the relationship in your Model
-                'attribute' => 'employee_id', // foreign key attribute that is shown to user
+                'attribute' => 'emp_name', // foreign key attribute that is shown to user
                 'model'     => "App\Models\Employee", // foreign key model
-                'pivot'     => true, // on create&update, do you need to add/delete pivot table entries?
             ]
         ];
         $this->crud->addColumns($cols);
@@ -87,4 +80,6 @@ class AttendanceCrudController extends CrudController
     {
         $this->setupCreateOperation();
     }
+
+
 }

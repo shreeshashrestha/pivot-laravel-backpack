@@ -29,7 +29,7 @@ class Attendance extends Model
     |--------------------------------------------------------------------------
     */
     public function employees(){
-        return $this->belongsToMany('App\Models\Employee','employee_attendance','attendance_id','employee_id');
+        return $this->belongsToMany('App\Models\Employee','employee_attendance','attendance_id','employee_id')->withTimestamps();
     }
     /*
     |--------------------------------------------------------------------------
